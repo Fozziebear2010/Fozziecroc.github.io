@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>fozzie croc | Gaming Channel</title>
+
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --bg-alt: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --accent-glow: rgba(34,197,94,0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #111827, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-shadow: 0 0 25px var(--accent-glow);
+      animation: glowPulse 3s infinite ease-in-out;
+    }
+
+    header p {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    .cta {
+      margin-top: 2rem;
+      padding: 0.9rem 1.8rem;
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .cta:hover {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 25px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .about p {
+      max-width: 800px;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #0f172a, #020617);
+      border: 1px solid #1f2933;
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    }
+
+    .card h3 {
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .subscribe {
+      text-align: center;
+      background: linear-gradient(180deg, transparent, #020617);
+      border-top: 1px solid #1f2933;
+    }
+
+    .subscribe a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 1rem 2.2rem;
+      background: var(--accent);
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 0 30px var(--accent-glow);
+      transition: transform 0.3s ease;
+    }
+
+    .subscribe a:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        text-shadow: 0 0 20px var(--accent-glow);
+      }
+      50% {
+        text-shadow: 0 0 35px var(--accent-glow);
+      }
+    }
+
+    /* Entrance animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>fozzie croc</h1>
+    <p>Gaming content. Clutch moments. Absolute chaos.  
+       Welcome to the croc pit 🐊🎮</p>
+    <button class="cta" onclick="scrollToSection('about')">
+      Enter the Channel
+    </button>
+  </header>
+
+  <section id="about" class="about reveal">
+    <h2>About the Channel</h2>
+    <p>
+      fozzie croc is all about gaming highlights, funny moments,
+      and raw gameplay energy. Whether it’s sweating ranked,
+      messing around with friends, or pulling off ridiculous plays,
+      this channel keeps it real and entertaining.
+    </p>
+  </section>
+
+  <section class="reveal">
+    <h2>What You’ll See</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>🎮 Gameplay</h3>
+        <p>High-energy sessions, intense fights, and clean plays.</p>
+      </div>
+      <div class="card">
+        <h3>😂 Funny Moments</h3>
+        <p>Clips that go wrong, go wild, or just make no sense.</p>
+      </div>
+      <div class="card">
+        <h3>🔥 Highlights</h3>
+        <p>The moments worth replaying at 2am.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="subscribe reveal">
+    <h2>Join the Croc Crew</h2>
+    <p>New videos dropping — don’t miss out.</p>
+    <a href="https://www.youtube.com" target="_blank">
+      Subscribe on YouTube
+    </a>
+  </section>
+
+  <footer>
+    © <span id="year"></span> fozzie croc — All rights reserved
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(r => observer.observe(r));
+  </script>
+
+</body>
+</html>
